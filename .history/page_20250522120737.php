@@ -1,0 +1,1 @@
+<h1 class="text-4xl md:text-5xl text-[var(--main-light)] font-bold drop-shadow">Varaa huoneistot</h1>

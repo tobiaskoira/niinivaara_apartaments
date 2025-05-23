@@ -1,0 +1,12 @@
+/*
+Theme Name: Niinivaara Apartments
+Theme URI: http://localhost/niinivaara_apartments
+Author: Dina
+Author URI: https://your-portfolio.com
+Description: WordPress-тема с Tailwind для бронирования апартаментов
+Version: 1.0
+*/
+:root {
+  --main-color: #1e40af; /* blue-800 */
+  --accent-color: #10b981; /* emerald-500 */
+}

@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+/* Custom Tailwind classes (if needed) */
+.sub-menu {
+  @apply hidden absolute; /* Hides submenus by default */
+}
+
+.menu-item-has-children:hover .sub-menu {
+  @apply block; /* Shows the submenu on hover (or toggle using JS) */
+}
+:root {
+
+    --main-color-hover: #1e40af20;
+    --accent-color: #10b981; /* emerald-500 */
+
+    --background-dark: #9C674Aff;
+    --main-color: #422825ff;
+    --text-hover: #392222ff;
+    --button-background-hover: #623B2Eff;
+    --button-background: #C49367ff;
+
+}
