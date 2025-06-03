@@ -1,11 +1,7 @@
 module.exports = {
-  content: [
-    "./**/*.php",
-    "./assets/js/**/*.js"
-  ],
+  content: ["./**/*.php", "./assets/js/**/*.js"],
   theme: {
     extend: {},
   },
   plugins: [],
-}
-
+};

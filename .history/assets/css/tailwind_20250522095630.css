@@ -9,7 +9,7 @@
 }
 /* Custom Tailwind classes (if needed) */
 .sub-menu {
-  @apply hidden absolute inline-block space-y-1 px-4 py-2 bg-[var(--background-dark)] text-white shadow-lg ; /* Hides submenus by default */
+  @apply hidden absolute inline-block space-y-1 px-4 py-2 bg-[var(--background-dark)] text-white shadow-lg; /* Hides submenus by default */
 }
 
 .menu-item-has-children:hover .sub-menu {
@@ -17,18 +17,16 @@
 }
 /* Tailwind CSS for submenu visibility */
 .menu-item-has-children {
-  position: relative; 
-  @@hover:text-[var(--text-hover)]
+  position: relative;
+  @@hover:text- [var(--text-hover)];
 }
 :root {
+  --main-color-hover: #1e40af20;
+  --accent-color: #10b981; /* emerald-500 */
 
-    --main-color-hover: #1e40af20;
-    --accent-color: #10b981; /* emerald-500 */
-
-    --background-dark: #9C674Aff;
-    --main-color: #422825ff;
-    --text-hover: #392222ff;
-    --button-background-hover: #623B2Eff;
-    --button-background: #C49367ff;
-
+  --background-dark: #9c674aff;
+  --main-color: #422825ff;
+  --text-hover: #392222ff;
+  --button-background-hover: #623b2eff;
+  --button-background: #c49367ff;
 }

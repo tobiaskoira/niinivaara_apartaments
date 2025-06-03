@@ -7,19 +7,19 @@ get_header();
 
 <div class="container mx-auto p-6">
   <!-- Page Title -->
-  <h1 class="text-4xl font-bold text-center"><?php the_title(); ?></h1>
+  <h1 class="font-medium text-center text-4xl mt-1 text-main uppercase font-montserrat"><?php the_title(); ?></h1>
 
   <!-- Page Content -->
-  <div class="content mt-4">
+  <div class="max-w-[1200px] mx-auto px-4 mb-10 text-2xl mt-1 text-main uppercase font-montserrat">    
     <?php
-    // The Loop: Display page content
-    if ( have_posts() ) :
-      while ( have_posts() ) : the_post();
-        the_content();  // Display page content
-      endwhile;
-    endif;
+    if (have_posts()) {
+      while (have_posts()) {
+        the_post();
+        the_content();
+      }
+    }
     ?>
-  </div>
 </div>
-
+      
+ 
 <?php get_footer(); ?>

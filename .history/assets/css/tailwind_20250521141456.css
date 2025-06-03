@@ -2,16 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
+  --main-color-hover: #1e40af20;
+  --accent-color: #10b981; /* emerald-500 */
 
-    --main-color-hover: #1e40af20;
-    --accent-color: #10b981; /* emerald-500 */
-
-    --button-background: #9C674Aff;
-    --main-color: #422825ff;
-    --bistre-2: #392222ff;
-    --bole: #623B2Eff;
-    --lion: #C49367ff;
-
+  --button-background: #9c674aff;
+  --main-color: #422825ff;
+  --bistre-2: #392222ff;
+  --bole: #623b2eff;
+  --lion: #c49367ff;
 }

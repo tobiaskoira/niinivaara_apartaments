@@ -1,44 +1,43 @@
+const hamburger = document.getElementById("hamburger-menu");
+const mobileMenu = document.getElementById("mobile-menu-modal");
+const mainMenu = document.querySelector("nav.w-full.lg\\:w-auto");
 
-  const hamburger = document.getElementById("hamburger-menu");
-  const mobileMenu = document.getElementById("menu-items-mobile");
-
-  function hideMobileMenu() {
-    mobileMenu.classList.remove("top-0");
-    mobileMenu.classList.add("-top-full");
+function updateMenuVisibility() {
+  if (window.innerWidth < 768) {
+    // Мобильная версия — скрываем основное меню
+    mainMenu.classList.add("hidden");
+    // Если мобильное меню скрыто, оно остаётся скрытым
+    // Если мобильное меню показано — оно видно
+  } else {
+    // Десктоп — показываем основное меню, скрываем мобильное
+    mainMenu.classList.remove("hidden");
+    mobileMenu.classList.add("hidden");
+    hamburger.classList.remove("open");
   }
-
-  function showMobileMenu() {
-    mobileMenu.classList.remove("-top-full");
-    mobileMenu.classList.add("top-0");
-  }
-
-  hamburger.addEventListener("click", () => {
-    if (mobileMenu.classList.contains("top-0")) {
-      hideMobileMenu();
-    } else {
-      showMobileMenu();
-    }
-  });
-
-  // Принудительно скрыть мобильное меню при ресайзе
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 640) {
-      hideMobileMenu();
-    }
-  });
-
-  // При загрузке тоже скрываем, если ширина >= 640
-  document.addEventListener("DOMContentLoaded", () => {
-    if (window.innerWidth >= 640) {
-      hideMobileMenu();
-    }
-  });
-const closeBtn = document.getElementById("close-mobile-menu");
-if (closeBtn) {
-  closeBtn.addEventListener("click", hideMobileMenu);
 }
 
+// Изначальная установка при загрузке страницы
+updateMenuVisibility();
 
+hamburger.addEventListener("click", () => {
+  const isHidden = mobileMenu.classList.toggle("hidden");
+  hamburger.classList.toggle("open");
 
+  if (!isHidden) {
+    // Мобильное меню показано — основное скрываем (для мобильных)
+    if (window.innerWidth < 768) {
+      mainMenu.classList.add("hidden");
+    }
+  } else {
+    // Мобильное меню скрыто — показываем основное (если ширина >=768, иначе скрываем)
+    if (window.innerWidth >= 768) {
+      mainMenu.classList.remove("hidden");
+    } else {
+      mainMenu.classList.add("hidden");
+    }
+  }
+});
 
-
+window.addEventListener("resize", () => {
+  updateMenuVisibility();
+});

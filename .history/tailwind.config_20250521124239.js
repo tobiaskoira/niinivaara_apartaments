@@ -3,25 +3,22 @@ module.exports = {
     "./**/*.php",
     "./template-parts/**/*.php",
     "./assets/js/**/*.js",
-    "./assets/css/**/*.css"
+    "./assets/css/**/*.css",
   ],
   safelist: [
-    'btn',
-    'btn-primary',
-    'btn-secondary',
-    'btn-accent',
-    'collapse',
-    'collapse-title',
-    'collapse-content',
-    'alert',
-    'card',
-    'modal', // add anything you plan to use from DaisyUI
+    "btn",
+    "btn-primary",
+    "btn-secondary",
+    "btn-accent",
+    "collapse",
+    "collapse-title",
+    "collapse-content",
+    "alert",
+    "card",
+    "modal", // add anything you plan to use from DaisyUI
   ],
   theme: {
     extend: {},
   },
   plugins: [require("daisyui")],
-}
-
-
-
+};

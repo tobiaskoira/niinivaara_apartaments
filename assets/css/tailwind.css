@@ -1,44 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+:root {
+  --main-color: #3f260a;
+  --main-light: #c1b397;
+  --main-background: #4b2a0a;
+  --accent-color: #392222;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
+body {
+  @apply font-sans;
+}
+
+.wp-block,
+.wp-block-column,
+.wp-block-paragraph,
+.wp-block-heading,
+.entry-content,
+.envira-gallery-wrap {
+  @apply font-sans;
+}
+
+.current-menu-item a {
+  @apply border-b-2 border-white;
+}
+
+.main-menu a:hover {
+  @apply border-b-2 border-white;
+}
+.wpcf7-form input,
+.wpcf7-form textarea,
+.wpcf7-form select {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.wpcf7-submit {
+  @apply bg-yellow-400 text-white font-bold py-6 px-6 rounded-full;
+}
+
+.wpcf7-submit:hover {
+  @apply bg-yellow-500;
+}
+
+.wpcf7-submit:active {
+  @apply bg-yellow-600;
+}
+#hamburger-menu.open span:nth-child(1) {
+  @apply rotate-45 translate-y-2.5;
+  transform-origin: center;
+}
+
+#hamburger-menu.open span:nth-child(2) {
+  @apply opacity-0;
+}
+
+#hamburger-menu.open span:nth-child(3) {
+  @apply -rotate-45 -translate-y-1.5;
+  transform-origin: center;
+}
+
+@layer components {
+  /* Обертка чекбокса CF7 */
+  .wpcf7-list-item {
+    @apply flex items-center gap-2 p-0 m-0 !important;
+  }
+
+  /* Сам чекбокс */
+  .wpcf7-list-item input[type="checkbox"] {
+    @apply w-5 h-5 m-0 flex-shrink-0 !important;
+  }
+
+  /* Лейбл внутри чекбокса */
+  .wpcf7-list-item label {
+    @apply m-0 cursor-pointer !important;
+  }
+
+  /* Дополнительно: убрать отступы у родительского label с классом flex */
+  fieldset label.flex {
+    @apply pl-0 ml-0;
   }
 }
-/* Custom Tailwind classes (if needed) */
-.sub-menu {
-  @apply hidden absolute inline-block space-y-1 px-4 py-2 bg-[var(--background-dark)] text-white shadow-lg ; /* Hides submenus by default */
+#hamburger-menu.open span:nth-child(2) {
+  @apply opacity-0;
 }
 
-.menu-item-has-children:hover .sub-menu {
-  @apply block; /* Shows the submenu on hover (or toggle using JS) */
+#hamburger-menu.open span:nth-child(3) {
+  @apply -rotate-45;
 }
-/* Tailwind CSS for submenu visibility */
-.menu-item {
-    @apply   text-[var(--main-color)];
-}
-.menu-item-has-children {
-  position: relative; 
-  @apply hover:text-[var(--text-hover)];
-}
-:root {
-
-    --main-color-hover: #1e40af20;
-    --accent-color: #10b981; /* emerald-500 */
-
-    --background-dark: #9C674Aff;
-    --background-light: #C49367ff;
-    --main-color: #422825ff;
-    --main-light: #C49367ff;
-    --text-hover: #392222ff;
-    --button-background-hover: #623B2Eff;
-    --button-background: #C49367ff;
-
+.custom-accordion-button {
+  @apply bg-[#4b2a0a]  py-2 px-4 rounded-lg hover:bg-[#5a3c1a] focus:outline-none focus:ring-2 focus:ring-[#3f260a];
 }
 
-/* booking plugin styles*/
-.hotel-booking-search .hb-form-table {
-  @apply grid grid-cols-1 sm:grid-cols-2 gap-6;
+.custom-accordion-button .kt-blocks-accordion-title {
+  @apply text-3xl font-semibold text-white;
+}
+
+.custom-accordion-button .kt-blocks-accordion-icon-trigger {
+  @apply ml-2 text-3xl;
+}
+@layer components {
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    @apply text-[#3f260a] text-2xl;
+  }
+}
+@layer components {
+  .cf7-wrapper input,
+  .cf7-wrapper textarea,
+  .cf7-wrapper select {
+    @apply w-full max-w-full box-border;
+  }
 }

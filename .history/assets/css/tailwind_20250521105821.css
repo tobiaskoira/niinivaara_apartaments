@@ -4,6 +4,5 @@
 
 :root {
   --main-color: #1e40af; /* blue-800 */
-  --main-color-hover: 
-  --accent-color: #10b981; /* emerald-500 */
+  --main-color-hover: --accent-color: #10b981; /* emerald-500 */
 }

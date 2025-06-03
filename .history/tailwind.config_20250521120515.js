@@ -3,12 +3,10 @@ module.exports = {
     "./*.php",
     "./**/*.php",
     "./template-parts/**/*.php",
-    "./assets/js/**/*.js"
+    "./assets/js/**/*.js",
   ],
   theme: {
     extend: {},
   },
   plugins: [require("daisyui")],
-}
-
-
+};
